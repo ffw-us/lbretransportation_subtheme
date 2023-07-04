@@ -1,8 +1,7 @@
 @charset "UTF-8";
 
-.su-alert,
-.su-alert a {
-  color: $st-color-white;
+.su-alert__text a {
+  color: inherit;
 }
 
 .su-alert--plain {
