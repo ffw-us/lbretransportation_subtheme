@@ -1,0 +1,35 @@
+# @see Example: https://github.com/SU-SWS/react_paragraphs/blob/8.x/modules/react_paragraphs_behaviors/react_paragraphs_behaviors.react_behaviors.yml
+# @see _attach_react_behavior_classes().
+banner_style:
+  id: banner_style
+  label: Banner Paragraph Style
+  bundles:
+    - paragraphs_type|stanford_banner
+  config:
+    layout:
+      type: select
+      title: Layout
+      description: Select the layout to display.
+      options:
+        layout--banner: Banner
+        layout--fifty-fifty: 50-50
+        layout--in-page-alert: In page alert
+      default_value: layout--banner
+
+palette:
+  id: palette
+  label: Paragraph Color Palette
+  bundles:
+    - paragraphs_type|stanford_banner
+  config:
+    color_scheme:
+      type: select
+      title: Color Scheme
+      description: Select the color scheme to display.
+      options:
+        color--black: Black
+        color--cardinal-red: Cardinal Red
+        color--sky-blue: Sky Blue
+        color--brick: Brick
+        color--palo-verde: Palo Verde
+      default_value: color--cardinal-red
