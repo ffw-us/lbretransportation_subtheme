@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.su-alert__text a {
+  color: inherit;
+}
+
+.su-alert--plain {
+  background-color: $st-color-black;
+}
+
+.su-alert--success {
+  background-color: $st-color-palo-verde;
+}
+
+.su-alert--info {
+  background-color: $st-color-sky-blue;
+}
+
+.su-alert--warning {
+  background-color: $st-color-brick;
+}
+
+.su-alert--error {
+  background-color: $st-color-cardinal-red;
+}
