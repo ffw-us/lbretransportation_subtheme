@@ -34,14 +34,14 @@ wysiwyg_style:
   bundles:
     - paragraphs_type|stanford_wysiwyg
   config:
-    layout:
+    style:
       type: select
-      title: Layout
-      description: Select the layout to display.
+      title: Style
+      description: Select the style to display.
       options:
-        layout--default: Default
-        layout--quick-links: Quick links
-      default_value: layout--default
+        style--default: Default
+        style--quick-links: Quick links
+      default_value: style--default
     color_scheme:
       type: select
       title: Color Scheme
