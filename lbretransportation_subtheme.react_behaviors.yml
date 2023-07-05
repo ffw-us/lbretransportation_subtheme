@@ -1,5 +1,6 @@
 # @see Example: https://github.com/SU-SWS/react_paragraphs/blob/8.x/modules/react_paragraphs_behaviors/react_paragraphs_behaviors.react_behaviors.yml
 # @see _attach_react_behavior_classes().
+# @Note: `*.config.*.description` property in this file is required and should not be empty.
 banner_style:
   id: banner_style
   label: Banner Paragraph Style
@@ -33,3 +34,18 @@ palette:
         color--brick: Brick
         color--palo-verde: Palo Verde
       default_value: color--cardinal-red
+
+lists_style:
+  id: lists_style
+  label: Lists Paragraph Style
+  bundles:
+    - paragraphs_type|stanford_lists
+  config:
+    cards_color:
+      type: select
+      title: Cards color scheme
+      description: Applicable only to lists with cards.
+      options:
+        cards-color--light: Light grey
+        cards-color--dark: Dark grey
+      default_value: cards-color--light
