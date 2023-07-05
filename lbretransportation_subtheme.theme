@@ -59,7 +59,7 @@ function lbretransportation_subtheme_preprocess_paragraph__stanford_wysiwyg(arra
   $paragraph = &$variables['paragraph'];
   $existing_classes = $variables['attributes']['class'] ?? [];
   $extra_classes = [
-    $paragraph->getBehaviorSetting('react_paragraphs:wysiwyg_style', 'layout', 'layout--default'),
+    $paragraph->getBehaviorSetting('react_paragraphs:wysiwyg_style', 'style', 'style--default'),
     $paragraph->getBehaviorSetting('react_paragraphs:wysiwyg_style', 'color_scheme', 'color--default'),
   ];
   $variables['attributes']['class'] = array_merge($existing_classes, $extra_classes);
