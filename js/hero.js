@@ -1,11 +1,26 @@
 (function ($) {
   "use strict";
 
-  Drupal.behaviors.field_descriptions = {
+  Drupal.behaviors.hero_cards = {
     attach: function (context, settings) {
-      $(".su-hero__card", context).each(function () {
-        $(this).css("margin-top", -($(this).height() / 2));
+      const centerCard = function () {
+        $(".su-hero__card", context).each(function () {
+          const marginOld = parseInt(
+            $(this).css("marginTop").replace("px", "")
+          );
+          const marginNew = -Math.round($(this).height() / 2);
+
+          if (marginOld !== marginNew) {
+            $(this).css("margin-top", marginNew);
+          }
+        });
+      };
+
+      $(window).on("resize", function () {
+        centerCard();
       });
+
+      centerCard();
     },
   };
 })(jQuery);

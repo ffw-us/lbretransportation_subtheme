@@ -102,7 +102,6 @@ allpages:
 #      dist/css/state.css: {}
 
 hero-js:
-  version: 0.1
   js:
     js/hero.js: {}
   dependencies:
