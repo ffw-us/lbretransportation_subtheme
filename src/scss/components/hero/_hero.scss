@@ -1,10 +1,35 @@
 @charset "UTF-8";
 
+.su-hero__media {
+  @include grid-media("md") {
+    position: static;
+    height: 608px;
+  }
+}
+
 .su-hero {
+  @include grid-media("md") {
+    display: block;
+  }
+
   .su-hero__card {
+    bottom: auto;
     border: none;
     box-shadow: none;
     color: $st-color-white;
+
+    @include grid-media-max("sm") {
+      margin-top: 0 !important;
+    }
+
+    @include grid-media("md") {
+      margin: 0;
+      max-width: 650px;
+    }
+
+    @include grid-media("lg") {
+      left: 103px;
+    }
 
     a {
       color: $st-color-white;
@@ -18,6 +43,8 @@
   }
 
   .su-card__contents {
+    padding: 2.4rem;
+
     > h2 {
       font-size: 1.3333em;
     }
@@ -64,5 +91,11 @@
 
   &.color--palo-verde .su-hero__card {
     background-color: $st-color-palo-verde;
+  }
+}
+
+.overlay-right .su-hero .su-hero__card {
+  @include grid-media("lg") {
+    right: 103px;
   }
 }
