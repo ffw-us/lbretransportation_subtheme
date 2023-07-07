@@ -30,7 +30,7 @@ function lbretransportation_subtheme_preprocess_pattern_hero(array &$variables):
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = $context->getProperty('entity');
   $extra_classes = [
-    $paragraph->getBehaviorSetting('react_paragraphs:banner_style', 'layout', 'layout--banner'),
+    $paragraph->getBehaviorSetting('react_paragraphs:banner_style', 'layout', 'layout--default'),
     $paragraph->getBehaviorSetting('react_paragraphs:banner_style', 'color_scheme', 'color--cardinal-red'),
   ];
   /** @var \Drupal\Core\Template\Attribute $attributes */
