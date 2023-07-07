@@ -8,6 +8,8 @@
   }
 
   .su-hero__media {
+    height: 300px;
+    
     @include grid-media("md") {
       position: static;
       height: 608px;
@@ -27,7 +29,7 @@
     }
 
     @include grid-media("lg") {
-      left: 103px;
+      left: 100px;
     }
 
     a {
@@ -101,6 +103,6 @@
 
 .overlay-right .layout--banner .su-hero__card {
   @include grid-media("lg") {
-    right: 103px;
+    right: 100px;
   }
 }

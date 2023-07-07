@@ -1,31 +1,33 @@
 @charset "UTF-8";
 
-.su-hero .su-hero__card {
-  border: none;
-  box-shadow: none;
-  color: $st-color-white;
-
-  a {
+.su-hero {
+  .su-hero__card {
+    border: none;
+    box-shadow: none;
     color: $st-color-white;
+
+    a {
+      color: $st-color-white;
+    }
   }
-}
 
-.color--black .su-hero__card {
-  background-color: $st-color-black;
-}
+  &.color--black .su-hero__card {
+    background-color: $st-color-black;
+  }
 
-.color--cardinal-red .su-hero__card {
-  background-color: $st-color-cardinal-red;
-}
+  &.color--cardinal-red .su-hero__card {
+    background-color: $st-color-cardinal-red;
+  }
 
-.color--sky-blue .su-hero__card {
-  background-color: $st-color-sky-blue;
-}
+  &.color--sky-blue .su-hero__card {
+    background-color: $st-color-sky-blue;
+  }
 
-.color--brick .su-hero__card {
-  background-color: $st-color-brick;
-}
+  &.color--brick .su-hero__card {
+    background-color: $st-color-brick;
+  }
 
-.color--palo-verde .su-hero__card {
-  background-color: $st-color-palo-verde;
+  &.color--palo-verde .su-hero__card {
+    background-color: $st-color-palo-verde;
+  }
 }
