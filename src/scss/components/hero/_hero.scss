@@ -1,108 +1,17 @@
 @charset "UTF-8";
 
-.layout--banner {
-  @include grid-media("md") {
-    display: block;
-  }
+.su-hero .su-hero__card {
+  border: none;
+  box-shadow: none;
+  color: $st-color-white;
 
-  .su-hero__media {
-    @include grid-media("md") {
-      position: static;
-      height: 608px;
-    }
-  }
-
-  .su-hero__card {
-    bottom: auto;
-    border: none;
-    box-shadow: none;
+  a {
     color: $st-color-white;
-
-    @include grid-media-max("sm") {
-      margin-top: 0 !important;
-    }
-
-    @include grid-media("md") {
-      margin: 0;
-      max-width: 650px;
-    }
-
-    @include grid-media("lg") {
-      left: 103px;
-    }
-
-    a {
-      color: $st-color-white;
-      text-decoration: none;
-
-      &:hover,
-      &:active {
-        text-decoration: underline;
-      }
-    }
   }
+}
 
-  .su-card__contents {
-    padding: 2.4rem;
-
-    > :first-child {
-      margin-top: 0;
-    }
-
-    > h2 {
-      margin-bottom: 1.6rem;
-      font-size: 1.3333em;
-
-      @include grid-media("md") {
-        margin-bottom: 1.2rem;
-      }
-    }
-
-    p {
-      margin-bottom: 2.4rem;
-      font-size: 1.8rem;
-
-      @include grid-media("md") {
-        margin-bottom: 1.6rem;
-      }
-    }
-
-    > p {
-      font-size: 1.6rem;
-    }
-
-    ul {
-      margin: 0;
-      margin-top: 2.4rem;
-      padding: 0;
-      list-style-type: none;
-
-      @include grid-media("md") {
-        margin-top: 1.6rem;
-      }
-
-      li:last-child p {
-        margin-bottom: 0;
-      }
-
-      a {
-        position: relative;
-        padding-right: 1.8rem;
-
-        &::after {
-          position: absolute;
-          margin-left: 0.8rem;
-          font-size: 3.2rem;
-          line-height: 1.8rem;
-          content: "\203A";
-        }
-      }
-    }
-  }
-
-  &.color--black .su-hero__card {
-    background-color: $st-color-black;
-  }
+.color--black .su-hero__card {
+  background-color: $st-color-black;
 }
 
 .color--cardinal-red .su-hero__card {
@@ -119,10 +28,4 @@
 
 .color--palo-verde .su-hero__card {
   background-color: $st-color-palo-verde;
-}
-
-.overlay-right .layout--banner .su-hero__card {
-  @include grid-media("lg") {
-    right: 103px;
-  }
 }
