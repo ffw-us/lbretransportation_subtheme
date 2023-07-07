@@ -1,15 +1,15 @@
 @charset "UTF-8";
 
-.su-hero__media {
-  @include grid-media("md") {
-    position: static;
-    height: 608px;
-  }
-}
-
-.su-hero {
+.layout--banner {
   @include grid-media("md") {
     display: block;
+  }
+
+  .su-hero__media {
+    @include grid-media("md") {
+      position: static;
+      height: 608px;
+    }
   }
 
   .su-hero__card {
@@ -103,25 +103,25 @@
   &.color--black .su-hero__card {
     background-color: $st-color-black;
   }
-
-  &.color--cardinal-red .su-hero__card {
-    background-color: $st-color-cardinal-red;
-  }
-
-  &.color--sky-blue .su-hero__card {
-    background-color: $st-color-sky-blue;
-  }
-
-  &.color--brick .su-hero__card {
-    background-color: $st-color-brick;
-  }
-
-  &.color--palo-verde .su-hero__card {
-    background-color: $st-color-palo-verde;
-  }
 }
 
-.overlay-right .su-hero .su-hero__card {
+.color--cardinal-red .su-hero__card {
+  background-color: $st-color-cardinal-red;
+}
+
+.color--sky-blue .su-hero__card {
+  background-color: $st-color-sky-blue;
+}
+
+.color--brick .su-hero__card {
+  background-color: $st-color-brick;
+}
+
+.color--palo-verde .su-hero__card {
+  background-color: $st-color-palo-verde;
+}
+
+.overlay-right .layout--banner .su-hero__card {
   @include grid-media("lg") {
     right: 103px;
   }
