@@ -12,10 +12,11 @@ banner_style:
       title: Layout
       description: Select the layout to display.
       options:
-        layout--banner: Banner
+        layout--default: Default Banner
+        layout--banner: Banner wih floating box
         layout--fifty-fifty: 50-50
         layout--in-page-alert: In page alert
-      default_value: layout--banner
+      default_value: layout--default
     color_scheme:
       type: select
       title: Color Scheme
