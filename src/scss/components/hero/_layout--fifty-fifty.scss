@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+.layout--fifty-fifty {
+  display: block;
+  min-height: 0;
+  margin-left: 2.4rem;
+  margin-right: 2.4rem;
+
+  @include grid-media("lg") {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+
+  .su-hero__media {
+    position: static;
+    min-height: 0;
+    height: 262px;
+
+    @include grid-media("lg") {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 50%;
+      height: auto;
+    }
+  }
+
+  .su-hero__card {
+    left: auto;
+    bottom: auto;
+    margin: 0;
+    max-width: none;
+
+    @include grid-media("lg") {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 50%;
+    }
+  }
+
+  .su-card__contents {
+    padding: 2.4rem;
+
+    @include grid-media("lg") {
+      padding: 7.2rem;
+    }
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > span {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+
+      @include grid-media("md") {
+        font-size: 1.8rem;
+      }
+    }
+
+    > h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.2rem;
+
+      @include grid-media("md") {
+        font-size: 3.5rem;
+        margin-bottom: 0.8rem;
+      }
+    }
+
+    p {
+      line-height: 1.5;
+      margin-bottom: 1.6rem;
+    }
+  }
+}
+
+.overlay-right .layout--fifty-fifty {
+  @include grid-media("lg") {
+    flex-direction: row;
+  }
+}
+
+.overlay-right .layout--fifty-fifty .su-hero__card {
+  right: auto;
+}
