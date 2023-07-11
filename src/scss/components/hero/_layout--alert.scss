@@ -1,13 +1,14 @@
 @charset "UTF-8";
 
 .layout--in-page-alert {
+  display: block;
   min-height: 0;
   margin-left: 2.4rem;
   margin-right: 2.4rem;
 
-  @include grid-media("md") {
-    display: block;
-    margin: 0;
+  @include grid-media("lg") {
+    margin-left: 10.2rem;
+    margin-right: 10.2rem;
   }
 
   .su-hero__media {
@@ -15,18 +16,10 @@
   }
 
   .su-hero__card {
+    left: auto;
     bottom: auto;
-
-    @include grid-media("md") {
-      left: auto;
-      margin: 0 45px;
-      max-width: none;
-    }
-
-    @include grid-media("lg") {
-      margin-left: 100px;
-      margin-right: 100px;
-    }
+    margin: 0;
+    max-width: none;
   }
 
   .su-card__contents {
@@ -73,4 +66,8 @@
   &.color--palo-verde .su-card__contents::before {
     content: "\f058";
   }
+}
+
+.overlay-right .layout--in-page-alert .su-hero__card {
+  right: auto;
 }
