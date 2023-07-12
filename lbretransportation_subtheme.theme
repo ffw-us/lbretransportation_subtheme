@@ -36,6 +36,7 @@ function lbretransportation_subtheme_preprocess_pattern_hero(array &$variables):
   /** @var \Drupal\Core\Template\Attribute $attributes */
   $attributes = &$variables['attributes'];
   $attributes->addClass($extra_classes);
+  $variables['banner_layout'] = $paragraph->getBehaviorSetting('react_paragraphs:banner_style', 'layout', 'layout--default');
 }
 
 /**
