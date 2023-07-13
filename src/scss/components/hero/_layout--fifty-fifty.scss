@@ -19,10 +19,11 @@
     height: 262px;
 
     @include grid-media("lg") {
-      flex-grow: 0;
-      flex-shrink: 0;
-      flex-basis: 50%;
-      height: auto;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 50%;
+      height: 100%;
     }
   }
 
@@ -36,6 +37,7 @@
       flex-grow: 0;
       flex-shrink: 0;
       flex-basis: 50%;
+      margin-right: auto;
     }
 
     .su-card__button {
@@ -107,8 +109,16 @@
   @include grid-media("lg") {
     flex-direction: row;
   }
-}
 
-.overlay-right .layout--fifty-fifty .su-hero__card {
-  right: auto;
+  .su-hero__media {
+    @include grid-media("lg") {
+      left: 0;
+    }
+  }
+
+  .su-hero__card {
+    right: auto;
+    margin-left: auto;
+    margin-right: 0;
+  }
 }
