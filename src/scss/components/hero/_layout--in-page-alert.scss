@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+.layout--in-page-alert {
+  display: block;
+  min-height: 0;
+  margin-left: 2.4rem;
+  margin-right: 2.4rem;
+
+  @include grid-media("lg") {
+    margin-left: 10.2rem;
+    margin-right: 10.2rem;
+  }
+
+  .su-hero__media {
+    display: none;
+  }
+
+  .su-hero__card {
+    left: auto;
+    bottom: auto;
+    margin: 0;
+    max-width: none;
+
+    .su-card__button {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .su-button.su-link {
+      padding: 0;
+      background: none;
+      font-size: 1.6rem;
+      line-height: 1.25;
+      font-weight: 600;
+      text-decoration: underline;
+
+      @include grid-media("md") {
+        font-size: 1.8rem;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $su-color-white;
+        color: $st-color-black;
+      }
+    }
+  }
+
+  .su-card__contents {
+    padding: 1.8rem;
+
+    @include grid-media("lg") {
+      display: flex;
+      align-items: center;
+    }
+
+    &::before {
+      display: inline-block;
+      margin-right: 0.5em;
+      margin-bottom: 1em;
+      font-family: "Font Awesome 5 Free";
+      font-weight: $su-font-semi-bold;
+      content: "\f05a";
+
+      @include grid-media("lg") {
+        margin-right: 2.6rem;
+        margin-bottom: 0;
+      }
+    }
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > span {
+      display: inline-block;
+      margin: 0;
+      line-height: 100%;
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+
+      @include grid-media("lg") {
+        margin-left: calc(0.5em - 2.6rem);
+        margin-right: 2.6rem;
+      }
+
+      &::after {
+        content: ":";
+      }
+    }
+  }
+
+  .su-card__inner {
+    > h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5625em;
+      letter-spacing: -0.012em;
+    }
+
+    p {
+      margin-bottom: 0;
+      line-height: 1.4;
+    }
+  }
+
+  &.color--black .su-card__contents::before {
+    content: "\f0f3";
+  }
+
+  &.color--cardinal-red .su-card__contents::before {
+    content: "\f071";
+  }
+
+  &.color--sky-blue .su-card__contents::before {
+    content: "\f05a";
+  }
+
+  &.color--brick .su-card__contents::before {
+    content: "\f06a";
+  }
+
+  &.color--palo-verde .su-card__contents::before {
+    content: "\f058";
+  }
+}
+
+.overlay-right .layout--in-page-alert .su-hero__card {
+  right: auto;
+}
