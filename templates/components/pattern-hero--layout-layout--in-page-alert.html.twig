@@ -1,12 +1,7 @@
 {% extends use %}
 
 {%- block herocontent -%}
-  {%- if banner_layout == 'layout--banner' -%}
-    {{ attach_library('lbretransportation_subtheme/hero-js') }}
-  {%- endif -%}
-  {%- if banner_layout == 'layout--in-page-alert' -%}
-    {%- set template_path_card = '@lbretransportation_subtheme/components/card/card--in-page-alert.html.twig' -%}
-  {%- endif -%}
+  {%- set template_path_card = '@lbretransportation_subtheme/components/card/card--in-page-alert.html.twig' -%}
 
   {%- if hero_super_headline is not empty or hero_headline is not empty or hero_body is not empty or hero_link is not empty -%}
     {# We reuse the card component here. #}
