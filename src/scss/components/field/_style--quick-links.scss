@@ -9,10 +9,7 @@
       max-width: 42.5rem;
     }
 
-    h2,
-    h3,
-    h4,
-    h5 {
+    h3 {
       margin-bottom: 1.6rem;
       font-size: 2rem;
       line-height: 1.2;
@@ -58,21 +55,23 @@
     }
   }
 
-  &.color--black .su-wysiwyg-text,
-  &.color--cardinal-red .su-wysiwyg-text,
-  &.color--sky-blue .su-wysiwyg-text,
-  &.color--brick .su-wysiwyg-text,
-  &.color--palo-verde .su-wysiwyg-text {
-    color: $su-color-white;
-
-    ul {
-      li {
-        border-top-color: rgba($su-color-white, 0.3);
-      }
-    }
-
-    a {
+  &.color--black,
+  &.color--cardinal-red,
+  &.color--sky-blue,
+  &.color--brick,
+  &.color--palo-verde {
+    .su-wysiwyg-text {
       color: $su-color-white;
+
+      ul {
+        li {
+          border-top-color: rgba($su-color-white, 0.3);
+        }
+      }
+
+      a {
+        color: $su-color-white;
+      }
     }
   }
 
