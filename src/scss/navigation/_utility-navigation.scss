@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+.utility-navigation {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+
+  @include grid-media("lg") {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2.4rem;
+  }
+
+  @include grid-media("xl") {
+    margin-bottom: 2.6rem;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $st-color-black;
+    margin-left: 2.4rem;
+    font-weight: 600;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: 2px solid $st-color-outline-blue;
+      outline-offset: 3px;
+    }
+
+    &.external-link {
+      &:before {
+        content: "\f35d";
+        margin-left: 1rem;
+        color: $st-color-cardinal-red;
+        font-family: "Font Awesome 5 Free";
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        font-size: 1.3rem;
+        line-height: 1;
+        order: 1000;
+        text-decoration: none;
+      }
+    }
+  }
+
+  // Mobile in menu.
+  &.utility-navigation-mobile {
+    display: flex;
+
+    @include grid-media("lg") {
+      display: none;
+    }
+
+    a {
+      color: $su-color-white;
+      margin-top: 2.4rem;
+    }
+  }
+}
+
+.su-mobile-site-utility {
+  margin-bottom: 0.09rem;
+}

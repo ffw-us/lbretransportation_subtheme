@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.su-masthead {
+  > section:last-of-type {
+    @include grid-media('lg') {
+      @include padding(2.4rem null null null);
+    }
+
+    @include grid-media('xl') {
+      @include padding(1.6rem null null null);
+    }
+  }
+}
