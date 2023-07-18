@@ -11,7 +11,8 @@ use Drupal\ui_patterns\Element\PatternContext;
  * Prepares variables for the html.html.twig template.
  */
 function lbretransportation_subtheme_preprocess_html(&$variables) {
-  $variables['stanford_basic_path'] = \Drupal::service('extension.list.theme')->getPath('stanford_basic');
+  $variables['stanford_basic_path'] = \Drupal::service('extension.list.theme')
+    ->getPath('stanford_basic');
 }
 
 /**
@@ -31,13 +32,15 @@ function lbretransportation_subtheme_preprocess_pattern_hero(array &$variables):
   $context = &$variables['context'];
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = $context->getProperty('entity');
-  $extra_classes = [
-    $paragraph->getBehaviorSetting('react_paragraphs:banner_style', 'layout', 'layout--default'),
-    $paragraph->getBehaviorSetting('react_paragraphs:banner_style', 'color_scheme', 'color--cardinal-red'),
-  ];
-  /** @var \Drupal\Core\Template\Attribute $attributes */
-  $attributes = &$variables['attributes'];
-  $attributes->addClass($extra_classes);
+  if ($paragraph) {
+    $extra_classes = [
+      $paragraph->getBehaviorSetting('react_paragraphs:banner_style', 'layout', 'layout--default'),
+      $paragraph->getBehaviorSetting('react_paragraphs:banner_style', 'color_scheme', 'color--cardinal-red'),
+    ];
+    /** @var \Drupal\Core\Template\Attribute $attributes */
+    $attributes = &$variables['attributes'];
+    $attributes->addClass($extra_classes);
+  }
 }
 
 /**
