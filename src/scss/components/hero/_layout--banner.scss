@@ -20,10 +20,6 @@
     margin: 0;
     max-width: none;
 
-    @include grid-media-max("md") {
-      margin-top: 0 !important;
-    }
-
     @include grid-media("lg") {
       left: 10.2rem;
       max-width: 650px;
