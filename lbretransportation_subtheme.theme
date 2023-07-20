@@ -106,7 +106,7 @@ function lbretransportation_subtheme_preprocess(&$variables, $hook) {
   if ($hook == "pattern_news-vertical-teaser") {
     $node = $variables["context"]->getProperty('entity');
     // Add date to the card.
-    if (!$node->get('su_news_publishing_date')->isEmpty()) {
+    if ($node && !$node->get('su_news_publishing_date')->isEmpty()) {
       $variables['news_publishing_date'] = $node->su_news_publishing_date->date->format('F d, Y');
     }
   }
