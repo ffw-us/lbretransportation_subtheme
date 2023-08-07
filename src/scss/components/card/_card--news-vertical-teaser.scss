@@ -21,6 +21,7 @@
     height: 20.7rem;
 
     div,
+    span,
     picture,
     img {
       display: block;
@@ -32,6 +33,11 @@
 
   .su-news-header {
     padding: 2.4rem;
+    display: block;
+  }
+
+  .teaser__footer {
+    display: block;
   }
 
   .su-news-vertical-teaser__link {
@@ -79,7 +85,7 @@
   }
 
   .su-news__publish-date {
-    display: inline-block;
+    display: block;
     margin-bottom: 1.6rem;
     font-size: 1.4rem;
     line-height: 1.2;
