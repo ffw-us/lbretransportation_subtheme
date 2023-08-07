@@ -1,0 +1,15 @@
+{% extends use %}
+
+{%- block herocontent -%}
+  {%- set template_path_card = '@lbretransportation_subtheme/components/card/card--in-page-alert.html.twig' -%}
+
+  {%- if hero_super_headline is not empty or hero_headline is not empty or hero_body is not empty or hero_link is not empty -%}
+    {# We reuse the card component here. #}
+    {% include template_path_card with { modifier_class: 'su-hero__card', card_super_headline: hero_super_headline, card_headline: hero_headline, card_body: hero_body, card_link: hero_link, card_button_label: hero_button_label, card_cta_label: hero_cta_label, card_cta_attributes: hero_cta_attributes } only %}
+  {%- endif -%}
+  {%- if hero_content is not empty -%}
+    <div class="su-hero__content">
+      <div class="su-hero__content-inner">{{ hero_content }}</div>
+    </div>
+  {%- endif -%}
+{%- endblock -%}
