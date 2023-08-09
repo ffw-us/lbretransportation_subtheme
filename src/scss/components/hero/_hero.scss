@@ -8,23 +8,23 @@
   }
 
   &.color--black .su-hero__card {
-    background-color: $st-color-black;
+    background-color: $su-color-black;
   }
 
   &.color--cardinal-red .su-hero__card {
-    background-color: $st-color-cardinal-red;
+    background-color: $su-color-cardinal-red;
   }
 
   &.color--sky-blue .su-hero__card {
-    background-color: $st-color-sky-blue;
+    background-color: $su-color-sky-dark;
   }
 
   &.color--brick .su-hero__card {
-    background-color: $st-color-brick;
+    background-color: $su-color-brick-light;
   }
 
   &.color--palo-verde .su-hero__card {
-    background-color: $st-color-palo-verde;
+    background-color: $su-color-palo-verde-dark;
   }
 
   .su-card__contents {
