@@ -11,8 +11,8 @@ It incorporates redesign of the following components and paragraphs:
     Global alerts (Modified colors to the new color scheme)
     Banner paragraph (Additional variants: Banner with floating box, 50-50, In-page alert)
     Quick links (Additional variant of the Text area component)
+    Lists component (Redesign of Card grid layout for News, two color variants - Dark grey, Light grey)
     Utility links in header
-    Footer color update
 
 All variants are added using Paragraph behaviours.
 
@@ -61,7 +61,7 @@ Run:
 npm run build
 ```
 
-Or for development, you can watch for changes with:
+Or for development you can watch for changes and compile automatically with:
 ```
 npm run watch
 ```
