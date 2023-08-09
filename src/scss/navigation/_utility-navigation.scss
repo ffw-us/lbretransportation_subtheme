@@ -20,7 +20,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: $st-color-black;
+    color: $su-color-black;
     margin-left: 2.4rem;
     font-weight: 600;
 
@@ -38,7 +38,6 @@
       &:before {
         content: "\f35d";
         margin-left: 1rem;
-        color: $st-color-cardinal-red;
         font-family: "Font Awesome 5 Free";
         font-style: normal;
         font-variant: normal;
@@ -47,6 +46,10 @@
         line-height: 1;
         order: 1000;
         text-decoration: none;
+
+        @include grid-media("lg") {
+          color: $su-color-cardinal-red;
+        }
       }
     }
   }
