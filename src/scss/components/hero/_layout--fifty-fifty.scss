@@ -48,11 +48,11 @@
     .su-button.su-link {
       padding: 1.2rem 2.4rem;
       background-color: $su-color-white;
-      border: 1px solid $st-color-cardinal-red;
+      border: 1px solid $su-color-cardinal-red;
       box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1);
       font-size: 1.6rem;
       line-height: 1.5;
-      color: $st-color-cardinal-red;
+      color: $su-color-cardinal-red;
       text-decoration: none;
 
       @include grid-media("md") {

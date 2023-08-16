@@ -3,26 +3,34 @@
 
   Drupal.behaviors.heroCards = {
     attach: function (context) {
-      once("heroCards", "html").forEach(function () {
-        const centerCard = function () {
-          $(".layout--banner .su-hero__card", context).each(function () {
-            const marginOld = parseInt(
-              $(this).css("marginTop").replace("px", "")
-            );
-            const marginNew = -Math.round($(this).height() / 2);
+      // Center the text box vertically
+      const centerCard = function () {
+        const MEDIA_LG = 992;
+        const $heroCards = $(".layout--banner .su-hero__card", context);
 
-            if (marginOld !== marginNew) {
-              $(this).css("margin-top", marginNew);
-            }
-          });
-        };
+        $heroCards.each(function () {
+          const $this = $(this);
+          const marginOld = parseInt($this.css("margin-top").replace("px", ""));
+          const marginNew =
+            window.innerWidth >= MEDIA_LG ? -Math.round($this.height() / 2) : 0;
 
-        $(window).on("resize", function () {
-          centerCard();
+          if (marginOld !== marginNew) {
+            $this.css("margin-top", `${marginNew}px`);
+          }
         });
+      };
 
-        centerCard();
-      });
+      // Debounce the resize event to avoid excessive recalculations
+      const debounce = (callback, delay) => {
+        let timeoutId;
+        return () => {
+          clearTimeout(timeoutId);
+          timeoutId = setTimeout(callback, delay);
+        };
+      };
+
+      $(window, context).on("resize", debounce(centerCard, 250));
+      $(window, context).on("load", centerCard);
     },
   };
 })(jQuery);

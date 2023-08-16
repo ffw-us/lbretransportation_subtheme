@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+// Set height to 100% of the grid items.
+.su-card.su-news-vertical-teaser,
+.ds-entity--stanford-news {
+  &,
+  .su-news-vertical-teaser__link {
+    position: relative;
+    height: 100%;
+  }
+}
+
+.su-card.su-news-vertical-teaser {
+  margin: 0;
+  border: 0 none;
+  box-shadow: none;
+
+  .su-card__media {
+    display: block;
+    position: relative;
+    height: 20.7rem;
+
+    div,
+    span,
+    picture,
+    img {
+      display: block;
+      object-fit: cover;
+      margin: 0;
+      height: 100%;
+    }
+  }
+
+  .su-news-header {
+    padding: 2.4rem;
+    display: block;
+  }
+
+  .teaser__footer {
+    display: block;
+  }
+
+  .su-news-vertical-teaser__link {
+    background-color: $st-color-light-gray;
+    color: $st-color-dark-gray;
+
+    .su-link {
+      &:after {
+        transition: none;
+        transform: none;
+      }
+    }
+  }
+
+  .su-link {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 2.9rem;
+
+    @include grid-media("lg") {
+      line-height: 2.6rem;
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .su-card__contents {
+    display: none;
+  }
+
+  &.su-news-external {
+    .su-link {
+      &:after {
+        width: 1.4rem;
+        height: 1.4rem;
+        margin: 1.6rem 0 0;
+        display: block;
+        background-color: $st-color-blue;
+        -webkit-mask: url("data:image/svg+xml,%0A%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.9002 0.699951C7.40314 0.699951 7.0002 1.10289 7.0002 1.59995C7.0002 2.09701 7.40314 2.49995 7.9002 2.49995H10.2274L4.5638 8.16356C4.21233 8.51503 4.21233 9.08488 4.5638 9.43635C4.91527 9.78782 5.48512 9.78782 5.83659 9.43635L11.5002 3.77274V6.09995C11.5002 6.59701 11.9031 6.99995 12.4002 6.99995C12.8973 6.99995 13.3002 6.59701 13.3002 6.09995V1.59995C13.3002 1.10289 12.8973 0.699951 12.4002 0.699951H7.9002Z' fill='%232C5697'/%3E%3Cpath d='M2.5002 2.49995C1.50608 2.49995 0.700195 3.30584 0.700195 4.29995V11.5C0.700195 12.4941 1.50608 13.3 2.5002 13.3H9.7002C10.6943 13.3 11.5002 12.4941 11.5002 11.5V8.79995C11.5002 8.3029 11.0973 7.89995 10.6002 7.89995C10.1031 7.89995 9.7002 8.3029 9.7002 8.79995V11.5H2.5002V4.29995L5.2002 4.29995C5.69725 4.29995 6.1002 3.89701 6.1002 3.39995C6.1002 2.90289 5.69725 2.49995 5.2002 2.49995H2.5002Z' fill='%232C5697'/%3E%3C/svg%3E%0A");
+        mask: url("data:image/svg+xml,%0A%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.9002 0.699951C7.40314 0.699951 7.0002 1.10289 7.0002 1.59995C7.0002 2.09701 7.40314 2.49995 7.9002 2.49995H10.2274L4.5638 8.16356C4.21233 8.51503 4.21233 9.08488 4.5638 9.43635C4.91527 9.78782 5.48512 9.78782 5.83659 9.43635L11.5002 3.77274V6.09995C11.5002 6.59701 11.9031 6.99995 12.4002 6.99995C12.8973 6.99995 13.3002 6.59701 13.3002 6.09995V1.59995C13.3002 1.10289 12.8973 0.699951 12.4002 0.699951H7.9002Z' fill='%232C5697'/%3E%3Cpath d='M2.5002 2.49995C1.50608 2.49995 0.700195 3.30584 0.700195 4.29995V11.5C0.700195 12.4941 1.50608 13.3 2.5002 13.3H9.7002C10.6943 13.3 11.5002 12.4941 11.5002 11.5V8.79995C11.5002 8.3029 11.0973 7.89995 10.6002 7.89995C10.1031 7.89995 9.7002 8.3029 9.7002 8.79995V11.5H2.5002V4.29995L5.2002 4.29995C5.69725 4.29995 6.1002 3.89701 6.1002 3.39995C6.1002 2.90289 5.69725 2.49995 5.2002 2.49995H2.5002Z' fill='%232C5697'/%3E%3C/svg%3E%0A");
+      }
+    }
+  }
+
+  .su-news__publish-date {
+    display: block;
+    margin-bottom: 1.6rem;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
+
+.cards-color--dark.paragraph--type--stanford-lists {
+  .su-card.su-news-vertical-teaser {
+    .su-news-vertical-teaser__link {
+      background-color: $st-color-dark-gray;
+
+      .su-news__publish-date,
+      .su-link {
+        color: $su-color-white;
+      }
+
+      .su-link {
+        &:after {
+          background-color: $su-color-white;
+        }
+      }
+    }
+  }
+}
