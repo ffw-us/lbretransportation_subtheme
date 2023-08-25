@@ -1,4 +1,39 @@
 @charset "UTF-8";
 
-// apply cta and link mixins here appropriately to override link styles.
+.su-link--external {
+  .su-hero.color--cardinal-red &,
+  .su-hero.color--black &,
+  .su-hero.color--sky-blue &,
+  .su-hero.color--brick &,
+  .su-hero.color--palo-verde &,
+  .paragraph.color--black &,
+  .paragraph.color--sky-blue &,
+  .paragraph.color--brick &,
+  .paragraph.color--palo-verde &,
+  .paragraph.color--cardinal-red &,
+  .su-alert--error &,
+  .su-alert--warning &,
+  .su-alert--info &,
+  .su-alert--success &,
+  .su-alert--plain & {
+    &:after {
+      background-color: $su-color-white;
+    }
+  }
 
+  .su-alert--text-light .su-alert__text &,
+  .su-alert--text-light .su-alert__text &{
+    &:focus,
+    &:hover {
+      &:after {
+        background-color: $su-color-black;
+      }
+    }
+  }
+
+  .layout--banner .su-hero__card &.su-button.su-link {
+    &:after {
+      background-color: $su-color-cardinal-red;
+    }
+  }
+}
