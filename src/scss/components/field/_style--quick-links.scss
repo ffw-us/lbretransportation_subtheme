@@ -38,6 +38,28 @@
           text-decoration: underline;
         }
 
+        &.su-link--external {
+          &::after {
+            content: "\f35d";
+            margin-left: 1rem;
+            font-family: "Font Awesome 5 Free";
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            font-size: 1.3rem;
+            line-height: 1;
+            order: 1000;
+            text-decoration: none;
+            -webkit-mask: none;
+            mask: none;
+            background-color: transparent;
+            width: auto;
+            height: auto;
+            transition: none;
+            transform: none;
+          }
+        }
+
         &::before {
           position: absolute;
           right: 0;
