@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+.layout--layout-paragraphs-one-column .layout__region {
+  grid-template-columns: minmax(0, 1fr);
+}
