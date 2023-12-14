@@ -1,5 +1,5 @@
 # [LBRE Transportation](https://github.com/SU-SWS/lbretransportation_subtheme)
-##### Version: 9.x
+##### Version:  1.1.4
 
 Description
 ---
@@ -15,6 +15,10 @@ It incorporates redesign of the following components and paragraphs:
     Utility links in header
 
 All variants are added using Paragraph behaviours.
+
+Sites
+---
+Installed on https://transportationd9.sites.stanford.edu/ and https://transportationd9-test.sites.stanford.edu
 
 Installation
 ---
