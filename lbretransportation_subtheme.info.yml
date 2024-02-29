@@ -2,7 +2,7 @@ name: 'LBRE Transportation'
 type: theme
 description: 'LBRE Transportation Theme. Maintenance contact: Aaron Sato - aaron.sato@ffw.com'
 package: Stanford
-version: 1.1.5
+version: 1.1.6
 core_version_requirement: ^9 || ^10
 base theme: stanford_basic
 libraries:
