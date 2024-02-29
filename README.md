@@ -1,5 +1,5 @@
 # [LBRE Transportation](https://github.com/SU-SWS/lbretransportation_subtheme)
-##### Version:  1.1.5
+##### Version:  1.1.6
 
 Description
 ---
