@@ -86,6 +86,12 @@ function lbretransportation_subtheme_ui_patterns_suggestions_alter(array &$sugge
   // Unset the reference to avoid potential side effects.
   unset($value);
 
+  if ($variables['theme_hook_original']  == 'pattern_card') {
+    $node = $variables["context"]->getProperty('entity');
+    $is_shuttle_route = in_array('406', array_map(function ($value) { return $value['target_id']; }, $node->su_shared_tags->getValue()));
+    $suggestions[] = $variables['theme_hook_original'] . '__shuttle';
+  }
+
   $paragraph = $context->getProperty('entity');
   if ($paragraph && $paragraph->bundle() === "stanford_banner") {
     $layout = $paragraph->getBehaviorSetting('react_paragraphs:banner_style', 'layout', 'layout--default');
