@@ -88,8 +88,10 @@ function lbretransportation_subtheme_ui_patterns_suggestions_alter(array &$sugge
 
   if ($variables['theme_hook_original']  == 'pattern_card') {
     $node = $variables["context"]->getProperty('entity');
-    $is_shuttle_route = in_array('406', array_map(function ($value) { return $value['target_id']; }, $node->su_shared_tags->getValue()));
-    $suggestions[] = $variables['theme_hook_original'] . '__shuttle';
+    if ($node->bundle() == 'stanford_page' && $node->hasField('su_shared_tags')) {
+      $is_shuttle_route = in_array('406', array_map(function ($value) { return $value['target_id']; }, $node->su_shared_tags->getValue()));
+      $suggestions[] = $variables['theme_hook_original'] . '__shuttle';
+    }
   }
 
   $paragraph = $context->getProperty('entity');
@@ -114,6 +116,71 @@ function lbretransportation_subtheme_preprocess(&$variables, $hook) {
     // Add date to the card.
     if ($node && !$node->get('su_news_publishing_date')->isEmpty()) {
       $variables['news_publishing_date'] = $node->su_news_publishing_date->date->format('F d, Y');
+    }
+  }
+
+  if ($hook == "pattern_card") {
+    $node = $variables["context"]->getProperty('entity');
+    switch ($node->label()) {
+      case "Line RWC":
+        $variables['card_theme'] = 'light-red';
+        $variables["card_theme_label"] = t('RWC');
+          break;
+      case "Line AE-F":
+        $variables['card_theme'] = 'gray';
+        $variables["card_theme_label"] = t('AE-F');
+          break;
+      case "Line C":
+        $variables['card_theme'] = 'cyan';
+        $variables["card_theme_label"] = t('C');
+          break;
+      case "East Bay Express":
+        $variables['card_theme'] = 'blue';
+        $variables["card_theme_label"] = t('EB');
+          break;
+      case "Hospital: Direct":
+        $variables['card_theme'] = 'blue-green';
+        $variables["card_theme_label"] = t('HD');
+          break;
+      case "Medical Center":
+        $variables['card_theme'] = 'violet';
+        $variables["card_theme_label"] = t('MC');
+          break;
+      case "Oak Creek Apartments":
+        $variables['card_theme'] = 'dark-gray';
+        $variables["card_theme_label"] = t('OCA');
+          break;
+      case "Line P":
+        $variables['card_theme'] = 'light-green';
+        $variables["card_theme_label"] = t('P');
+          break;
+      case "Research Park":
+        $variables['card_theme'] = 'dark-green';
+        $variables["card_theme_label"] = t('RP');
+          break;
+      case "Line S":
+        $variables['card_theme'] = 'brown-green';
+        $variables["card_theme_label"] = t('S');
+          break;
+      case "Shopping Express":
+        $variables['card_theme'] = 'pink';
+        $variables["card_theme_label"] = t('SE');
+          break;
+      case "SLAC":
+        $variables['card_theme'] = 'green';
+        $variables["card_theme_label"] = t('SLAC');
+          break;
+      case "Line X (Counter-Clockwise)":
+        $variables['card_theme'] = 'red';
+        $variables["card_theme_label"] = t('X');
+          break;
+      case "Line Y (Clockwise)":
+        $variables['card_theme'] = 'red';
+        $variables["card_theme_label"] = t('Y');
+          break;
+      default:
+        break;
+      
     }
   }
 }
