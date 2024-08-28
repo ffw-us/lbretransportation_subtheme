@@ -122,6 +122,10 @@ function lbretransportation_subtheme_preprocess(&$variables, $hook) {
   if ($hook == "pattern_card") {
     $node = $variables["context"]->getProperty('entity');
     switch ($node->label()) {
+      case "1050 Arastradero":
+        $variables['card_theme'] = 'brown';
+        $variables["card_theme_label"] = t('1050 A');
+          break;
       case "Line RWC":
         $variables['card_theme'] = 'light-red';
         $variables["card_theme_label"] = t('RWC');
