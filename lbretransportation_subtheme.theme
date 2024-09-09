@@ -86,6 +86,18 @@ function lbretransportation_subtheme_ui_patterns_suggestions_alter(array &$sugge
   // Unset the reference to avoid potential side effects.
   unset($value);
 
+  if ($variables['theme_hook_original']  == 'pattern_card') {
+    $node = $variables["context"]->getProperty('entity');
+    if ($node->bundle() == 'stanford_page' && $node->hasField('su_shared_tags')) {
+      $is_shuttle_route = in_array('406', array_map(function ($value) {
+        return $value['target_id'];
+      }, $node->su_shared_tags->getValue()));
+      if ($is_shuttle_route) {
+        $suggestions[] = $variables['theme_hook_original'] . '__shuttle';
+      }
+    }
+  }
+
   $paragraph = $context->getProperty('entity');
   if ($paragraph && $paragraph->bundle() === "stanford_banner") {
     $layout = $paragraph->getBehaviorSetting('react_paragraphs:banner_style', 'layout', 'layout--default');
@@ -99,6 +111,81 @@ function lbretransportation_subtheme_ui_patterns_suggestions_alter(array &$sugge
   }
 }
 
+/*
+  Function check title string.
+  Returns theme color as string and flag content as string.
+ */
+function check_shuttle_title($title) {
+  $card_theme = "";
+  $card_theme_label = "";
+  switch ($title) {
+    case "1050 Arastradero":
+      $card_theme = 'brown';
+      $card_theme_label = t('1050 A');
+      break;
+    case "Line RWC":
+      $card_theme = 'light-red';
+      $card_theme_label = t('RWC');
+      break;
+    case "Line AE-F":
+      $card_theme = 'gray';
+      $card_theme_label = t('AE-F');
+      break;
+    case "Line C":
+      $card_theme = 'cyan';
+      $card_theme_label = t('C');
+      break;
+    case "East Bay Express":
+      $card_theme = 'blue';
+      $card_theme_label = t('EB');
+      break;
+    case "Hospital: Direct":
+      $card_theme = 'blue-green';
+      $card_theme_label = t('HD');
+      break;
+    case "Medical Center":
+      $card_theme = 'violet';
+      $card_theme_label = t('MC');
+      break;
+    case "Oak Creek Apartments":
+      $card_theme = 'dark-gray';
+      $card_theme_label = t('OCA');
+      break;
+    case "Line P":
+      $card_theme = 'light-green';
+      $card_theme_label = t('P');
+      break;
+    case "Research Park":
+      $card_theme = 'dark-green';
+      $card_theme_label = t('RP');
+      break;
+    case "Line S":
+      $card_theme = 'brown-green';
+      $card_theme_label = t('S');
+      break;
+    case "Shopping Express":
+      $card_theme = 'pink';
+      $card_theme_label = t('SE');
+      break;
+    case "SLAC":
+      $card_theme = 'green';
+      $card_theme_label = t('SLAC');
+      break;
+    case "Line X (Counter-Clockwise)":
+      $card_theme = 'red';
+      $card_theme_label = t('X');
+      break;
+    case "Line Y (Clockwise)":
+      $card_theme = 'red';
+      $card_theme_label = t('Y');
+      break;
+    default:
+      break;
+  }
+
+  return array($card_theme, $card_theme_label);
+}
+
 /**
  * Implements hook_preprocess_HOOK().
  */
@@ -110,4 +197,40 @@ function lbretransportation_subtheme_preprocess(&$variables, $hook) {
       $variables['news_publishing_date'] = $node->su_news_publishing_date->date->format('F d, Y');
     }
   }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function lbretransportation_subtheme_preprocess_field__node__title(&$variables)
+{
+  $node = $variables['element']['#object'];
+
+  if ($node->bundle() == 'stanford_page' && $node->hasField('su_shared_tags')) {
+
+    $is_shuttle_route = in_array('406', array_map(function ($value) {
+      return $value['target_id'];
+    }, $node->su_shared_tags->getValue()));
+
+    if ($is_shuttle_route) {
+
+      $card_theme = check_shuttle_title($node->label());
+
+      $variables['items'][0]['content']['#suffix'] = '<span class="flag-mark--after flag-mark--' . $card_theme[0] . '" style="--flag-mark-content: ' . "'" . $card_theme[1] . "'" . '"></span>';
+
+      $variables['attributes']['class'][] = 'title-with-flag';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function lbretransportation_subtheme_preprocess_pattern_card__shuttle(&$variables, $hook) {
+  $node = $variables["context"]->getProperty('entity');
+
+  $card_theme = check_shuttle_title($node->label());
+
+  $variables['card_theme'] = $card_theme[0];
+  $variables['card_theme_label'] = $card_theme[1];
 }
